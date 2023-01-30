@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap');
 
 .lights {
+  position: relative;
+  width: 100%;
   margin: 0;
 }
 
 .lights h2 {
   color: #fff;
   position: relative;
-  margin-top: 200px;
+  margin-top: 0px;
   text-align: center;
   letter-spacing: 0.2em;
   font-size: 4em;
@@ -18,9 +20,9 @@
 .wire {
   text-align: center;
   white-space: nowrap;
-  position: absolute;
+  position: relative;
   padding: 0;
-  width: 95%;
+  width: 100%;
   top: -80px;
   border-bottom: 3px solid #222;
   height: 100px;

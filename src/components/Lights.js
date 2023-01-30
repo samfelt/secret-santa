@@ -13,11 +13,6 @@ export default function Lights() {
             <li></li>
             <li></li>
             <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
           </ul>
           <h2>Secret Santa!</h2>
       </div>
