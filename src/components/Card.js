@@ -1,3 +1,4 @@
+import './css/Card.css'
 import { useState } from 'react'
 
 export default function Card() {
