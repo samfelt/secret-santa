@@ -15,7 +15,7 @@ export default function Modal({ setUser }) {
              value={formUser}
              onChange={(e) => setFormUser(e.target.value)}
            />
-           <input type="submit" value="?????" />
+           <input type="submit" value="Submit" />
           </form>
         </div>
       </div>
