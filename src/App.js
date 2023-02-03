@@ -1,5 +1,5 @@
 import './App.css';
-import { people } from './static/people'
+import { whoHasWho } from './static/whoHasWho'
 import Card from './components/Card'
 import Lights from './components/Lights'
 import Title from './components/Title'
@@ -8,12 +8,6 @@ import WhoAreYou from './components/WhoAreYou'
 import { useState, Fragment } from 'react'
 
 function App() {
-
-  const whoHasWho = {
-    tracy: people.alyssa,
-    alyssa: people.sam,
-    sam: people.tracy
-  }
 
   const [showModal, setShowModal] = useState(true)
   const [user, setUser] = useState(null)

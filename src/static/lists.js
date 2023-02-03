@@ -17,8 +17,14 @@ const tracys_list = [
     "More wine, always more wine"
 ]
 
+const pattis_list = [
+    "More heated bathrooms floors",
+    "Garth Brooks tickets"
+]
+
 export const lists = {
     sam: sams_list,
     alyssa: alyssas_list,
-    tracy: tracys_list
+    tracy: tracys_list,
+    patti: pattis_list
 }
