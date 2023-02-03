@@ -9,33 +9,32 @@ import { useState, Fragment } from 'react'
 
 function App() {
 
-  const [showModal, setShowModal] = useState(true)
   const [user, setUser] = useState(null)
+  const [error, setError] = useState('')
     
-    const acceptUser = (user) => {
-        console.log(`Setting user to: ${user}`)
-        if (user.toLowerCase() in whoHasWho) {
-            setUser(user.toLowerCase())
-            setShowModal(false)
-        }
-    }
+  const acceptUser = (user) => {
+      if (user.toLowerCase() in whoHasWho) {
+          setUser(user.toLowerCase())
+          setError('')
+      } else {
+          setUser(null)
+          setError(`Are you sure??? '${user}' not found`)
+      }
+  }
   return (
     <div className="App">
-      <br />
-      <br />
-      {showModal
-        ? 
-          <Fragment>
-          <Lights />
-          <Title />
-          <WhoAreYou setUser={(user) => acceptUser(user)} />
-          </Fragment>
-        : 
-          <Fragment>
-          <Lights />
-          <Card user={whoHasWho[user]} />
-          </Fragment>
-        }
+      <Lights />
+      {user ?
+        <Card user={whoHasWho[user]} />
+      :
+        <Fragment>
+        <Title />
+        <WhoAreYou
+          setUser={(u) => acceptUser(u)}
+          error={error}
+        />
+        </Fragment>
+      }
     </div>
   );
 }

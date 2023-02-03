@@ -7,11 +7,8 @@ export default function Card({ user }) {
     const [cardOpen, setCardOpen] = useState(false);
 
     const handleClick = () => {
-        console.log("Handing Click")
         setCardOpen(prev => !prev)
     }
-    
-    console.log(user.list)
 
     return(
         <div className={`card ${cardOpen ? "open" : ""}`} onClick={handleClick}>

@@ -1,13 +1,18 @@
 import './css/WhoAreYou.css'
 import { useState } from 'react'
 
-export default function WhoAreYou({ setUser }) {
+export default function WhoAreYou({ setUser, error}) {
 
     const [formUser, setFormUser] = useState('')
 
+    const handleSubmit = (e, user) => {
+        e.preventDefault()
+        setUser(user)
+    }
+
     return(
       <div className="whoareyou">
-         <form onSubmit={() => setUser(formUser)}>
+         <form onSubmit={(e) => {handleSubmit(e, formUser)}}>
          <label>Who are you?</label>
          <input
            type="text"
@@ -16,6 +21,7 @@ export default function WhoAreYou({ setUser }) {
          />
          <input type="submit" value="Submit" />
         </form>
+        {error && <div className="error">{error}</div>}
       </div>
     )
 }
