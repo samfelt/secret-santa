@@ -2,7 +2,7 @@ import './App.css';
 import Card from './components/Card'
 import Lights from './components/Lights'
 import Title from './components/Title'
-import Modal from './components/Modal'
+import WhoAreYou from './components/WhoAreYou'
 
 import { useState, Fragment } from 'react'
 
@@ -32,8 +32,9 @@ function App() {
       {showModal
         ? 
           <Fragment>
+          <Lights />
           <Title />
-          <Modal setUser={(user) => acceptUser(user)} />
+          <WhoAreYou setUser={(user) => acceptUser(user)} />
           </Fragment>
         : 
           <Fragment>
