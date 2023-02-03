@@ -20,7 +20,7 @@ function App() {
     
     const acceptUser = (user) => {
         console.log(`Setting user to: ${user}`)
-        if (user.toLowerCase() in people) {
+        if (user.toLowerCase() in whoHasWho) {
             setUser(user.toLowerCase())
             setShowModal(false)
         }
@@ -39,7 +39,7 @@ function App() {
         : 
           <Fragment>
           <Lights />
-          <Card user={people[user]} />
+          <Card user={whoHasWho[user]} />
           </Fragment>
         }
     </div>
