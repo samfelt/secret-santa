@@ -1,7 +1,7 @@
 import './css/Card.css'
 import { useState } from 'react'
 
-export default function Card() {
+export default function Card({ user }) {
 
 
     const [cardOpen, setCardOpen] = useState(false);
@@ -22,7 +22,7 @@ export default function Card() {
             <br/>
             <br/>
             <p>You are giving to</p>
-            <h2>Tracy</h2> 
+            <h2>{user}</h2> 
             <p></p>
             <p>good luck...</p>
           </div>

@@ -8,6 +8,7 @@
 }
 
 .modal div {
+  position: relative;
   display: block;
   font-family: 'Mountains of Christmas';
   font-size: 3em;

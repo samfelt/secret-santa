@@ -8,26 +8,37 @@ import { useState, Fragment } from 'react'
 
 function App() {
 
+  const people = {
+    "tracy": "Sam",
+    "patti": "Tracy",
+    "alyssa": "Patti",
+    "roger": "Alyssa"
+  }
+
   const [showModal, setShowModal] = useState(true)
   const [user, setUser] = useState(null)
     
     const acceptUser = (user) => {
         console.log(`Setting user to: ${user}`)
-        setUser(user)
-        setShowModal(false)
+        if (user.toLowerCase() in people) {
+            setUser(user.toLowerCase())
+            setShowModal(false)
+        }
     }
   return (
     <div className="App">
       <br />
       <br />
       {showModal
-        ? <Modal setUser={(user) => acceptUser(user)} />
-        : 
+        ? 
           <Fragment>
           <Title />
+          <Modal setUser={(user) => acceptUser(user)} />
+          </Fragment>
+        : 
+          <Fragment>
           <Lights />
-          <Card />
-          <Lights />
+          <Card user={people[user]} />
           </Fragment>
         }
     </div>
