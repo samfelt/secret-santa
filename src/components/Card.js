@@ -10,6 +10,8 @@ export default function Card({ user }) {
         console.log("Handing Click")
         setCardOpen(prev => !prev)
     }
+    
+    console.log(user.list)
 
     return(
         <div className={`card ${cardOpen ? "open" : ""}`} onClick={handleClick}>
@@ -22,7 +24,7 @@ export default function Card({ user }) {
             <br/>
             <br/>
             <p>You are giving to</p>
-            <h2>{user}</h2> 
+            <h2>{user.name}</h2> 
             <p></p>
             <p>good luck...</p>
           </div>
@@ -31,10 +33,9 @@ export default function Card({ user }) {
         <div className="bottom-card">
           <h2>What They Want for Christmas</h2> 
           <ul>
-            <li>Delicious Chips</li>
-            <li>Gift Cards</li>
-            <li>Some peace and quite</li>
-            <li>More wine, always more wine</li>
+            {user.list.map((item) => {
+              return <li key={item}>{item}</li>
+            })}
           </ul>
         </div>
       </div>

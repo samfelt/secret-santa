@@ -5,7 +5,7 @@ export default function Title() {
 
     return(
       <div className="title">
-        <h2>Secret Santa!</h2>
+        <h2>Felton Family Secret Santa!</h2>
       </div>
     )
 }
